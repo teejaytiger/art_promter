@@ -19,18 +19,18 @@ Prompter = class Prompter {
     }
 
     promptmaker(){
-        s = ""
+        let s = "";
         for(let i = 0, len = this.order.length; i < len; i++){
-            s += ("\n" + this.dict[i].random())
+            s += ("\n" + this.dict[this.order[i]].random())
         }
         return s;
     };
 }
 
-document.write(Prompter.prompt());
+const test_prompt = new Prompter();
+document.write(test_prompt.prompt);
 
 </script>
 
 </body>
 </html> 
-

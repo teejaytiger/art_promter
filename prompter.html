@@ -27,8 +27,35 @@ Prompter = class Prompter {
     };
 }
 
+const prompt_div = document.createElement( 'div' );
+document.body.appendChild( prompt_div );
 const test_prompt = new Prompter();
-document.write(test_prompt.prompt);
+
+prompt_div.innerText = test_prompt.prompt;
+
+const random_soft_color = function()
+{
+    return Math.floor( 70 * Math.random() ) + 180;
+}
+
+const r = random_soft_color();
+const g = random_soft_color();
+const b = random_soft_color();
+
+Object.assign( prompt_div.style, {
+    position: 'absolute',
+    width: '40%',
+    height: '30%',
+    left: '30%',
+    top: '35%',
+    fontSize: '2.5em',
+    textAlign: 'center',
+    boxSizing: 'border-box',
+    backgroundColor: `rgb( ${r}, ${g}, ${b} )`,
+    borderRadius: '25px',
+    outline: '1px solid black',
+    boxShadow: '2px 2px 5px rgb( 200, 200, 200 )',
+});
 
 </script>
 

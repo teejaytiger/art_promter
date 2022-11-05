@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+Array.prototype.random = function () {
+    return this[Math.floor((Math.random()*this.length))];
+  }
+
+Prompter = class Prompter {
+    constructor(){
+        this.dict = {'words.txt': ['ahegao', 'hungry', 'demonic', 'femme', 'fat', "lingerie'd", 'beefcake', 'normcore', 'lackadaisical', 'stretched', 'soiled', 'crying', 'dismayed', 'sleepy', 'equestrian', 'kawaii', 'goth', 'hardstyle', 'psychobilly', 'schmoopy'], 'words3.txt': ['shiny', 'matte/flat', 'summery', 'wintry', 'chubby', 'spacey', 'heshy', 'spoopy', 'magic', 'tuff', 'monochromatic', 'rad/dope', 'wealthy', 'thiccc', 'bold', 'hot', 'gleeful', 'gelatinous', 'soft/glowing', 'vaporwave'], 'words2.txt': ['santa', 'milkman', 'vibrator', 'pup', 'shower', 'bath', 'leg', 'beefcake', 'farmer', 'cowboi', 'fuccboi', 'harness', 'french press', 'hamsa', 'pizza', 'sun/moon', 'beverage', 'beard', 'witch', 'boobie/tiddie', 'hot pocket', 'garbage', 'snake', 'hot dog']};
+        this.order = ["words.txt", "words3.txt", "words2.txt"];
+    }
+
+    get prompt(){
+        return this.promptmaker();
+    }
+
+    promptmaker(){
+        s = ""
+        for(let i = 0, len = this.order.length; i < len; i++){
+            s += ("\n" + this.dict[i].random())
+        }
+        return s;
+    };
+}
+
+document.write(Prompter.prompt());
+
+</script>
+
+</body>
+</html> 
+
